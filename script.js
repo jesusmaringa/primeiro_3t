@@ -2,9 +2,13 @@ function inicialize() {
    document.getElementById("capital").focus();
 }
 function arredondar(n) {
-   return (Math.round(n * 100) / 100).toFixed(2).replace(".", ",");
+   //return (Math.round(n * 100) / 100).toFixed(2).replace(".", ",");
+   return n.toLocaleString("pt-BR", {
+      // Ajustando casas decimais
+      minimumFractionDigits: 2,  
+      maximumFractionDigits: 2
+    });
 }
-
 function calcula() {
    document.getElementById("resultado").innerHTML +arredondar(0);
    let c = document.getElementById("capital").value;
